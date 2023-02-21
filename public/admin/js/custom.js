@@ -25,7 +25,7 @@ $(document).ready(function() {
         });
     })
 
-    //Update Admin Status ativo ou inativo ao clicar ele altera no BD.
+    //Update Admin Status ativo ou inativo ao clicar ele altera no BD table admins.
     $(document).on("click", ".updateAdminStatus", function() {
         var status = $(this).children("i").attr("status");
         var admin_id = $(this).attr("admin_id");
