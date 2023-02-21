@@ -17,15 +17,15 @@ class VendorsTableSeeder extends Seeder
     {
         //
         $vendorRecords = [
-            ['id' => 1,
-            'name' => 'John',
+            ['id' => 4,
+            'name' => 'Paula',
             'address'=> 'CP-112',
             'city'=> 'New Delhi',
             'state'=> 'Delhi',
             'country'=> 'India',
             'pincode'=> '110001',
             'mobile'=> '97000000000',
-            'email'=> 'john@admin.com',
+            'email'=> 'paula@admin.com',
             'status'=> 0],
         ];
         Vendor::insert($vendorRecords);

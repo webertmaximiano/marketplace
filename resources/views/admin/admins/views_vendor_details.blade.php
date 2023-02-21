@@ -4,6 +4,10 @@
 <div class="content-wrapper">
     <!--carrega a tela de informação pessoal-->
     <div class="row">
+     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+        <h3 class="font-weight-bold">Vendor Details</h3>
+        <h6 class="font-weight-normal mb-0"><a href="{{url('admin/admins/vendor')}}">Back to Vendors</a></h6>
+    </div>
         <!--carrega a tela de informação pessoal-->
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
