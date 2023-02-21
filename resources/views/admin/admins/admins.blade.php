@@ -41,6 +41,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                   
                     @foreach($admins as $admin)
                     <tr>
                       <td>

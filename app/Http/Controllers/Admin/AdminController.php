@@ -399,7 +399,7 @@ class AdminController extends Controller
        // dd($vendorDetails);
         return view('admin.admins.views_vendor_details')->with(compact('vendorDetails'));
     }
-
+    //table admins
     public function updateAdminStatus(Request $request) 
     {
         if ($request->ajax()) {
