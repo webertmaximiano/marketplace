@@ -25,7 +25,29 @@ Route::prefix('/admin')->namespace('App\http\Controllers\Admin')->group(function
     // Route Grupo Admin
     Route::group(['middleware'=>['admin']],function(){
         //admin dashboard route
-         Route::get('dashboard', 'AdminController@dashboard');   
+         Route::get('dashboard', 'AdminController@dashboard');
+         //update Admin password
+         Route::match(['get','post'], 'update-admin-password','AdminController@updateAdminPassword');
+            
+         //Check Admin password
+         Route::post('check-admin-password','AdminController@checkAdminPassword');
+
+         //update Admin Details
+         Route::match(['get','post'], 'update-admin-details','AdminController@updateAdminDetails');
+        //Update Vendor Details
+         Route::match(['get','post'], 'update-vendor-details/{slug}','AdminController@updateVendorDetails');
+         
+         // view Admin - subadmin - vendor
+        Route::get('admins/{type?}','AdminController@admins');
+
+        //view vendor details
+        Route::get('view-vendor-details/{id}','AdminController@viewVendorDetails');
+
+        //update admin status
+        Route::post('update-admin-status', 'AdminController@updateAdminStatus');
+
+         //admin logout
+         Route::get('logout', 'AdminController@logout');
     }); 
     // Admin Dashboard Route
     

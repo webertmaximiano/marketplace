@@ -5,11 +5,13 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Skydash Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ url('admin/vendors/feather/feather.css') }}">
   <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css') }}">
   <link rel="stylesheet" href="{{ url('admin/vendors/css/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="{{ url('admin/vendors/mdi/css/materialdesignicons.min.css') }}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{{ url('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
@@ -58,6 +60,9 @@
   <script src="{{ url('admin/js/dashboard.js') }}"></script>
   <script src="{{ url('admin/js/Chart.roundedBarCharts.js') }}"></script>
   <!-- End custom js for this page-->
+  <!--Custom Admin Js-->
+  <script src="{{ url('admin/js/custom.js') }}"></script>
+  <!-- End custom Admin js -->
 </body>
 
 </html>
