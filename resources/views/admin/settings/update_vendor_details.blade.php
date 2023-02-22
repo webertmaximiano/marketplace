@@ -74,7 +74,7 @@
                             <label for="vendor_country">Country</label>
                             <select class="form-control" id="vendor_country" name="vendor_country"
                              style="color: #495057;">
-                                <option value="">Select Country</option>
+                                <option value="">{{$vendorDetails['country']}}</option>
                                
                                 @foreach($countries as $country)
                                 <option value="{{ $country['country_name'] }}" @if($country['
@@ -173,7 +173,7 @@
                             <label for="shop_country">Shop País</label>
                             <select class="form-control" id="shop_country" name="shop_country" style="
                                 color: #495057;">
-                                <option value="">Select Country</option>
+                                <option value="">{{$vendorDetails['shop_country']}}</option>
                                 @foreach($countries as $country)
                                 <option value="{{ $country['country_name'] }}" @if($country['
                                 country_name']==$vendorDetails['shop_country']) selected @endif>{{
