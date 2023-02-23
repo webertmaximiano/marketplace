@@ -16,10 +16,7 @@ use App\Http\Controllers\ContactController;
 |
 */
 //Rotas Cplug
-
 Route::get('/', [IndexController::class, 'index'])->name('redewe2m.index');
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -56,6 +53,12 @@ Route::prefix('/admin')->namespace('App\http\Controllers\Admin')->group(function
 
          //admin logout
          Route::get('logout', 'AdminController@logout');
+
+         //Sections
+         Route::get('sections', 'SectionController@sections');
+
+         //update Sections status
+        Route::post('update-section-status', 'SectionController@updateSectionStatus');
     }); 
     // Admin Dashboard Route
     
