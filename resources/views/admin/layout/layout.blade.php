@@ -68,6 +68,8 @@
   <!--Custom Admin Js-->
   <script src="{{ url('admin/js/custom.js') }}"></script>
   <!-- End custom Admin js -->
+  <!-- Confirm deletion -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

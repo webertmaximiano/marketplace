@@ -56,9 +56,8 @@ Route::prefix('/admin')->namespace('App\http\Controllers\Admin')->group(function
 
          //Sections
          Route::get('sections', 'SectionController@sections');
-
-         //update Sections status
-        Route::post('update-section-status', 'SectionController@updateSectionStatus');
+         Route::post('update-section-status', 'SectionController@updateSectionStatus');
+         Route::get('delete-section/{id}', 'SectionController@deleteSections');
     }); 
     // Admin Dashboard Route
     

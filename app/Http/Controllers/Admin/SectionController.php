@@ -30,4 +30,10 @@ class SectionController extends Controller
         }
 
     }
+    public function deleteSections($id) {
+        //delete sections
+        Section::where('id', $id)->delete();
+        $message = "Section has been deleted successfuly!";
+        return redirect()->back()->with('success_message', $message);
+    }
 }
