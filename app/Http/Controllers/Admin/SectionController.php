@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Section;
+use Session;
 
 class SectionController extends Controller
 {
     public function sections() {
+        Session::put('page','sections');
         $sections = Section::get()->toArray();
         //dd($sections);
         return view('admin.sections.sections')->with(compact('sections'));
@@ -30,10 +32,48 @@ class SectionController extends Controller
         }
 
     }
+
     public function deleteSections($id) {
         //delete sections
         Section::where('id', $id)->delete();
         $message = "Section has been deleted successfuly!";
         return redirect()->back()->with('success_message', $message);
+    }
+
+    public function addEditSection(Request $request, $id=null){
+       Session::put('page','sections');
+       // dd($request);
+        if ($id==""){
+            $title = "Add Section";
+            $section = new Section;
+            $message = "Section added successfully";
+        }else{
+            $title = "Edit Section";
+            $section = Section::find($id);
+            $message = "Section updated successfully!";
+        }
+
+        if ($request->isMethod('post')){
+            $data = $request->all();
+            dd($data);
+            $rules = [
+                "section_name" => 'required|regex:/^[\pL\s\-]+$/u',
+            ];
+            $customMessages = [
+                "section_name.required" => "Nome é requerido",
+                "section_name.regex" => "Informe um nome válido",
+            ];
+
+            $this->validate($request,$rules,$customMessages);
+
+            $section->name =$data['section_name'];
+            $section->status = 1;
+            $section->save();
+            echo "teste";
+            return redirect('admin/sections')->with('success_message',$message);
+        }
+       
+        //dd($request);
+        return view('admin.sections.add_edit_section')->with(compact('title','section'));
     }
 }

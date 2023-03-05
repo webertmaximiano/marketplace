@@ -109,7 +109,7 @@ $(document).ready(function() {
                     'Your file has been deleted.',
                     'success'
                   )
-                  window.location = "/admin/delete-"+module+"/"+moduleid;
+                  window.location="/admin/delete-"+module+"/"+moduleid;
                 }
               })
         })
