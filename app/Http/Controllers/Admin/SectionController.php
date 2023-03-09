@@ -55,13 +55,13 @@ class SectionController extends Controller
 
         if ($request->isMethod('post')){
             $data = $request->all();
-            dd($data);
+            //dd($data);
             $rules = [
                 "section_name" => 'required|regex:/^[\pL\s\-]+$/u',
             ];
             $customMessages = [
-                "section_name.required" => "Nome é requerido",
-                "section_name.regex" => "Informe um nome válido",
+                "section_name.required" => "Nome de seçao é requerido",
+                "section_name.regex" => "Informe um nome de seção válido",
             ];
 
             $this->validate($request,$rules,$customMessages);
@@ -69,7 +69,7 @@ class SectionController extends Controller
             $section->name =$data['section_name'];
             $section->status = 1;
             $section->save();
-            echo "teste";
+            //echo "teste";
             return redirect('admin/sections')->with('success_message',$message);
         }
        
