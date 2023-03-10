@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Section;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class SectionController extends Controller
 {

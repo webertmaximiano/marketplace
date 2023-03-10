@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Hash;
-use Auth;
-use Image;
+use Intervention\Image\Image;
+
+
 use App\Models\Admin;
 use App\Models\Vendor;
 use App\Models\Country;
 use App\Models\VendorsBusinessDetail;
 use App\Models\VendorsBankDetail;
-use Session;
+
 
 class AdminController extends Controller
 {

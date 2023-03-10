@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Redewe2m\IndexController;
 
@@ -61,6 +62,10 @@ Route::prefix('/admin')->namespace('App\http\Controllers\Admin')->group(function
          //Route::get('add-edit-section', 'SectionController@addEditSection');
          //Route::post('add-edit-section', 'SectionController@addEditSection');
          Route::match(['get','post'], 'add-edit-section/{id?}','SectionController@addEditSection');
+
+        //Categories
+        Route::get('categories', 'CategoryController@categories');
+        Route::post('update-category-status','CategoryController@updateCategoryStatus');
     }); 
     // Admin Dashboard Route
     
