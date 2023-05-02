@@ -7,11 +7,12 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Categories</h4>
+             
               <!--<p class="card-description">
                 Add class <code>.table-bordered</code>
               </p>-->
               <a style="max-width: 150px; float: right; display: inline-block;" href="
-              {{url('admin/add-edit-section')}}" class="btn btn-block btn-primary">
+              {{url('admin/add-edit-category')}}" class="btn btn-block btn-primary">
                 Add Category</a>
                @if(Session::has('success_message'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">

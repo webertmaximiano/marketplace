@@ -66,6 +66,8 @@ Route::prefix('/admin')->namespace('App\http\Controllers\Admin')->group(function
         //Categories
         Route::get('categories', 'CategoryController@categories');
         Route::post('update-category-status','CategoryController@updateCategoryStatus');
+        Route::match(['get','post'], 'add-edit-category/{id?}','CategoryController@addEditCategory');
+
     }); 
     // Admin Dashboard Route
     
